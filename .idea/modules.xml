@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SmartMarvelApp.iml" filepath="$PROJECT_DIR$/SmartMarvelApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartmarvelapppersistence/smartmarvelapppersistence.iml" filepath="$PROJECT_DIR$/smartmarvelapppersistence/smartmarvelapppersistence.iml" />
     </modules>
   </component>
 </project>
