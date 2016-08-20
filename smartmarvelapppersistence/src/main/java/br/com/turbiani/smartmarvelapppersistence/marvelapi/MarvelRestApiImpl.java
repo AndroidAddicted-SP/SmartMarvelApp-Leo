@@ -8,6 +8,7 @@ import br.com.turbiani.smartmarvelapppersistence.entity.Creator;
 import br.com.turbiani.smartmarvelapppersistence.entity.Event;
 import br.com.turbiani.smartmarvelapppersistence.entity.Series;
 import br.com.turbiani.smartmarvelapppersistence.entity.Stories;
+import br.com.turbiani.smartmarvelapppersistence.utils.MarvelApiUrlUtil;
 import retrofit2.Retrofit;
 import retrofit2.http.GET;
 
@@ -16,7 +17,6 @@ import retrofit2.http.GET;
  */
 public class MarvelRestApiImpl implements MarvelRestApiInterface {
     private static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://api.github.com/")
             .build();
 
     private static MarvelRestApiInterface instance = new MarvelRestApiImpl();
@@ -26,7 +26,6 @@ public class MarvelRestApiImpl implements MarvelRestApiInterface {
     public static MarvelRestApiInterface getInstance(){
         if (retrofit==null)
             retrofit = new Retrofit.Builder()
-                    .baseUrl("https://api.github.com/")
                     .build();
 
         return instance;
@@ -37,7 +36,7 @@ public class MarvelRestApiImpl implements MarvelRestApiInterface {
     }
 
     @Override
-    @GET("users/{user}/repos")
+    @GET(new MarvelApiUrlUtil().BASE_URL)
     public List<Comic> getComics() {
         return null;
     }
