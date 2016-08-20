@@ -14,25 +14,24 @@ public class MarvelApiUrlUtil {
     private static final String PUBLIC_KEY  = "fccbea326115e103585607c74cd115a7";
     private static final String PRIVATE_KEY = "189adee0f8cd02686a0bb5bff230cf0258fab3b1";
 
-    public static final String BASE_URL = "http://gateway.marvel.com:80/v1/public";
+    public static final String BASE_URL = "http://gateway.marvel.com:80/";
     public static final String AUTH_URL = makeAuthUrl();
-    public static final String GET_COMICS = BASE_URL + "/comics" + AUTH_URL;
-    public static final String GET_CHARACTERS = BASE_URL + "/characters" + AUTH_URL;
-    public static final String GET_EVENTS = BASE_URL + "/events" + AUTH_URL;
-    public static final String GET_CREATORS = BASE_URL + "/creators" + AUTH_URL;
-    public static final String GET_ALL_SERIES = BASE_URL + "/series" + AUTH_URL;
-    public static final String GET_ALL_STORIES = BASE_URL + "/stories" + AUTH_URL;
+    public static final String GET_COMICS = "v1/public/comics" + AUTH_URL;
+    public static final String GET_CHARACTERS = "v1/public/characters" + AUTH_URL;
+    public static final String GET_EVENTS = "v1/public/events" + AUTH_URL;
+    public static final String GET_CREATORS = "v1/public/creators" + AUTH_URL;
+    public static final String GET_ALL_SERIES = "v1/public/series" + AUTH_URL;
+    public static final String GET_ALL_STORIES = "v1/public/stories" + AUTH_URL;
 
 
     private static String makeAuthUrl(){
-        long ts = Calendar.getInstance().getTimeInMillis();
+        int ts = 1;
         String apikey = PUBLIC_KEY;
         String hash = md5Generator(ts, PRIVATE_KEY, PUBLIC_KEY);
         StringBuffer url = new StringBuffer();
-        url.append("?ts=" + ts);
-        url.append("&apikey=" + apikey);
-        url.append("&hash=" + hash);
-
+        url.append("?ts=1");
+        url.append("&apikey=fccbea326115e103585607c74cd115a7");
+        url.append("&hash=3dd2bee5ae6631201ad17514a112814f");
         return url.toString();
     }
 
